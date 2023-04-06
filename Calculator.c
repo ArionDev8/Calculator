@@ -3,6 +3,29 @@
 #include <string.h>
 
 
+double calculateTheAverage(){
+    int number, sum = 0; 
+    double avg;
+    int cnt = 0;
+    char word;
+    for (int i = 0; ; i++)
+    {
+        scanf("%d", &number);
+        
+        scanf("%c", &word);
+        if(word == 's'){
+            break;
+        }
+        cnt++;
+        sum += number;
+        
+    }
+
+    avg = (double)sum / cnt;
+    return avg;
+}
+
+
 int sum(int number1, int number2){
     int sum;
 
@@ -63,7 +86,7 @@ void read(){
     scanf("%c", &sign);
     
     int sumResult,subtractResult,multiplicationResult,powResult;
-    double divisionResult,sqrtResult;
+    double divisionResult,sqrtResult,averageResult;
 
     switch (sign)
     {
@@ -109,7 +132,12 @@ void read(){
         sqrtResult = squareRoot(number1);
         printf("The result is %.2lf",sqrtResult);
         break; 
-    
+    case 'a':
+        printf("Enter the sequence of numbers:");
+        averageResult = calculateTheAverage();
+        printf("The result is %.2lf",averageResult);
+        break;
+
     default:
         break;
     }
